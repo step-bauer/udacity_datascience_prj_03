@@ -2,9 +2,11 @@
 Udacity - Data Scientist Nanodegree Program - Recommendation Engine (Lesson 4 Project)
 
 ## Pre-Reqs
-The jupyter notebook code runs under python version 3.9.5
+The jupyter notebook code runs under **python version 3.9.5** and also tested with **python 3.6.3**
 
-Required libaries panas, numpy, scipy, matplotlib, nbconvert
+Required libaries pandas, numpy, scipy, matplotlib, nbconvert in the appropriate version. See **requirements.txt**
+
+
 
 ## Intallation
  no installation is required. Use the jupyter notebook **Recommendations_with_IBM.ipynb** or read the html version of it **Recommendations_with_IBM.html**
