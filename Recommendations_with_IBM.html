@@ -13984,6 +13984,21 @@ VI. <a href="#conclusions">Extras &amp; Concluding</a></p>
 <p>At the end of the notebook, you will find directions for how to submit your work.  Let's get started by importing the necessary libraries and reading in the data.</p>
 
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># ensure that the correct lib are installed</span>
+<span class="o">!</span>pip install -r requirements.txt
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -16588,6 +16603,7 @@ articles with possible pred:      574
 The graphs show that increasing the latent feature will not give better results. The opposite is true so increasing latent features will increase the error on the test data set. One problem is that the intersection of users of the test and train data set is very small (20) to make a reliable test (test data set contains 682 users just 20 cann be used to test because just theses 20 are in the train set)</p>
 <p>The collaborative filtering is very limited here as many users have just very few interactions (50%&lt;=3&gt;). In addition we  just rely on interactions without knowing if the user really like the article he interacted with. We could improve this by give the user the ability to rate an article (like / dislike, or 0..10 rating)</p>
 <p>We could also use content based filtering so that user specifies areas or key words of interest and we use the knowledge of the article topics and content make recommendations.</p>
+<p>We could and should also use A/B testing to test how well our recommendation engine is working in practice and to validate our offline testing. We split users randomly in two groups, a control and an experimental group. The control group will get recommendations by top_articles (another experiment is to make recommendation by random) and the experimental group will get recommendations filtered by our recommendation engine. We then can calculate if the average user interactions of the experimental group is greater than the average interactions of the control group and if the calculated statistic is significant to a defined significance level alpha = 0.05 (or any other level based on the certainity ). If this is the case then we have a proof that the recommendation engine will improve the user interactions.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
