@@ -16599,17 +16599,22 @@ articles with possible pred:      574
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Your response here.</strong>
-The graphs show that increasing the latent feature will not give better results. The opposite is true so increasing latent features will increase the error on the test data set. One problem is that the intersection of users of the test and train data set is very small (20) to make a reliable test (test data set contains 682 users just 20 cann be used to test because just theses 20 are in the train set)</p>
+<p><strong>Your response here.</strong></p>
+<h4 id="Review-of-the-results">Review of the results<a class="anchor-link" href="#Review-of-the-results">&#182;</a></h4><p>The graphs show that increasing the latent feature will not give better results. The opposite is true so increasing latent features will increase the error on the test data set. One problem is that the intersection of users of the test and train data set is very small (20) to make a reliable test (test data set contains 682 users just 20 cann be used to test because just theses 20 are in the train set)</p>
 <p>The collaborative filtering is very limited here as many users have just very few interactions (50%&lt;=3&gt;). In addition we  just rely on interactions without knowing if the user really like the article he interacted with. We could improve this by give the user the ability to rate an article (like / dislike, or 0..10 rating)</p>
 <p>We could also use content based filtering so that user specifies areas or key words of interest and we use the knowledge of the article topics and content make recommendations.</p>
-<p>We could and should also use A/B testing to test how well our recommendation engine is working in practice and to validate our offline testing. We split users randomly in two groups, a control and an experimental group. The control group will get recommendations by top_articles (another experiment is to make recommendation by random) and the experimental group will get recommendations filtered by our recommendation engine. We then can calculate if the average user interactions of the experimental group is greater than the average interactions of the control group and if the calculated statistic is significant to a defined significance level alpha = 0.05 (or any other level based on the certainity ). If this is the case then we have a proof that the recommendation engine will improve the user interactions.</p>
+<h4 id="Next-Steps---Validate-Recommendation-Systems">Next Steps - Validate Recommendation Systems<a class="anchor-link" href="#Next-Steps---Validate-Recommendation-Systems">&#182;</a></h4><p><strong>A/B Test</strong> approach is a solid procedure to validate if the model brings real benefits in practice.</p>
+<p>We could and should also use A/B testing to test how well our recommendation engine is working in practice and to validate our offline testing by a practice experiment. Therefore we will define and execute an AB-Test to answer the questions if the collaborative filtering sysem we developed will increase the average user interactions.</p>
+<p>We define Null and alternative Hypothesis and then split users randomly in two groups, a control and an experimental group, when they enter the homepage.</p>
+<p>The control group will get recommendations by old recommendation systen (no recommendation at all or recommendation by random  and so on) and the experimental group will get recommendations by new system ( collaborative filtered or by top_articles).</p>
+<p>If we have collected enough test data (defined by eperiment sizing) we then can calculate if the average user interactions of the experimental group is greater than the average interactions of the control group and if the calculated statistic is significant to a defined significance level alpha = 0.05 (or any other level based on the certainty we need for alpha or beta error ).</p>
+<p>If Null Hypothesis (user interactions of old system-control group- is equal or greate than user interactions of new system ) is rejected then we have a proof that the new recommendation system of the experimental group will improve the user interactions compared to the one used by the control group.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">subprocess</span> <span class="kn">import</span> <span class="n">call</span>
@@ -16629,7 +16634,7 @@ The graphs show that increasing the latent feature will not give better results.
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
 
 
 
